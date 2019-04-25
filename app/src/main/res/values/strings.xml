@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">KQXS Miền Bắc</string>
-    <string name="title_home">Hôm nay</string>
-    <string name="title_dashboard">Tất cả</string>
-    <string name="title_notifications">Thông báo</string>
+    <string name="app_name">KQXS &amp; Bóng đá</string>
+    <string name="title_home">XS trực tiếp</string>
+    <string name="title_dashboard">KQ 7 ngày</string>
+    <string name="title_notifications">Bóng đá</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
