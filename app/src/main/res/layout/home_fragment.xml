@@ -6,41 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textViewhtml"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="TextView" />
-        </LinearLayout>
-    </ScrollView>
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton3"
-            android:layout_width="56dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="40dp"
-            android:background="@color/colorPrimary"
-            android:clickable="true"
-            android:src="@android:drawable/ic_dialog_dialer"
-            app:backgroundTint="@color/colorPrimary"
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="410dp"
+            android:layout_height="680dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:focusable="true" />
-
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
     </android.support.constraint.ConstraintLayout>
+
 </FrameLayout>
