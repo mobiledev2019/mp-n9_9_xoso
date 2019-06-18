@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.home_fragment, container, false);
         mWebView = v.findViewById(R.id.web);
-        mWebView.loadUrl("http://192.168.1.152/kqxs/kqmb.html");
+        mWebView.loadUrl("http://dinopro.ddns.net/kqxs/kqmb.html");
 
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
