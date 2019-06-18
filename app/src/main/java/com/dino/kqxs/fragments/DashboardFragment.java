@@ -7,12 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.jsoup.Connection;
 
 import com.dino.kqxs.R;
 
@@ -22,32 +22,36 @@ public class DashboardFragment extends Fragment {
     private static final String TAG = "CHOITHU";
     private static final String URL = "https://www.minhngoc.net.vn/getkqxs/mien-bac.js/";
 
+    static String text;
+    public TextView textView;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.dashboard_fragment, container, false);
         super.onCreate(savedInstanceState);
         new DownloadTask().execute(URL);
+        textView = v.findViewById(R.id.textView);
+        textView.setText(text);
+        return v;
     }
 
-    static class DownloadTask extends AsyncTask<String, Void, Void> {
+    static class DownloadTask extends AsyncTask<String, Void, String> {
         @Override
-        protected Void doInBackground(String... strings) {
+        protected String doInBackground(String... strings) {
             Document document = null;
+            text = "";
             try {
                 document = Jsoup.connect(strings[0]).get();
                 if (document != null) {
                     Elements kqElements = document.select("div.content > table > tbody > tr");
                     if (kqElements != null && kqElements.size() > 0) {
                         for (Element element : kqElements) {
-                            Element giaikq = element.getElementsByTag("td").first();
-                            Element sokq = element.getElementsByTag("td").first();
+                            Elements giaikq = element.getElementsByTag("td");
                             if (giaikq != null) {
                                 String giai = giaikq.text();
-                                Log.e(TAG, "doInBackground: " + giai);
-                            }
-
-                            if (sokq != null) {
-                                String so = sokq.text();
-                                Log.e(TAG, "doInBackground: " + so);
+                                text = text + giai + "\n";
+                                Log.e(TAG, "doInBackground: " + text);
                             }
                         }
                     }
@@ -57,8 +61,7 @@ public class DashboardFragment extends Fragment {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-            return null;
+            return text;
         }
     }
 }

@@ -11,15 +11,15 @@
         android:layout_height="680dp">
 
         <EditText
-            android:id="@+id/textTiele"
+            android:id="@+id/textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="56dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Nhập số muốn chơi"
+            android:hint="Nhập số muốn chơi"
+            android:inputType="number"
             android:textAlignment="center"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,28 +31,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:text="Lưu"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textTiele" />
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="268dp"
-            android:layout_height="77dp"
+            android:layout_width="330dp"
+            android:layout_height="362dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="156dp"
-            android:text="Số tiền"
+            android:background="#B6B6B6"
+            android:text="@string/tv_sotien"
+            android:textAlignment="center"
             android:textColor="#000"
             android:textSize="18dp"
-            android:textAlignment="center"
-            android:background="#B6B6B6"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
     </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>
